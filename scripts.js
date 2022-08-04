@@ -11,3 +11,9 @@ function makeGrid(thisMany){
 }
 
 makeGrid(16)
+
+document.querySelectorAll('.grid-square').forEach(item => {
+    item.addEventListener('mouseover', (event) => {
+        event.target.style.backgroundColor = 'black';
+    })
+})
