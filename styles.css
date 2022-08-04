@@ -1,7 +1,16 @@
 #grid{
-    height: 400px;
     width: 400px;
-    border: 10px solid black;
+    height: 400px;
     display: grid;
+    border: 20px solid maroon;
+    border-radius: 5%;
+}
+.grid-square{
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.grid-square:hover{
+    background-color: black;
 }
 
