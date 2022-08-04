@@ -1,13 +1,13 @@
 
 let gridBody = document.getElementById('grid')
 
-
-function makeSquares(thisMany){
-    for (let i = 0; i <= thisMany; i++){
+function makeGrid(thisMany){
+    gridBody.style.gridTemplateColumns = `repeat(${thisMany}, 1fr)`;
+    for(let i = 0;i < thisMany*thisMany;i++){
         let gridSquare = document.createElement('div');
-        gridSquare.classList.add('grid-square')
-        gridBody.appendChild(gridSquare)
+        gridSquare.classList.add('grid-square');
+        gridBody.appendChild(gridSquare);
     }
 }
 
-makeSquares()
+makeGrid(16)
