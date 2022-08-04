@@ -12,8 +12,17 @@ function makeGrid(thisMany){
 
 makeGrid(16)
 
-document.querySelectorAll('.grid-square').forEach(item => {
-    item.addEventListener('mouseover', (event) => {
+document.querySelectorAll('.grid-square').forEach(square => {
+    square.addEventListener('mouseover', (event) => {
         event.target.style.backgroundColor = 'black';
+    })
+})
+
+let allSquares = document.querySelectorAll('.grid-square')
+const resetButton = document.getElementById('reset-button')
+
+resetButton.addEventListener('click', () => {
+    allSquares.forEach(square => {
+        square.style.backgroundColor = 'white';
     })
 })
