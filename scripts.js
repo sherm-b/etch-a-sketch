@@ -10,7 +10,8 @@ function makeGrid(){
     const gridBody = document.getElementById('grid')
     const sideInput = document.getElementById('side-length-input')
     gridBody.style.gridTemplateColumns = `repeat(${sideInput.value}, 1fr)`;
-    for(let i = 0;i < sideInput.value*sideInput.value;i++){
+    if (sideInput.value <= 100){
+        for(let i = 0;i < sideInput.value*sideInput.value;i++){
         let gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
         if (radioBlack.checked){
@@ -24,6 +25,7 @@ function makeGrid(){
         })
     }
         gridBody.appendChild(gridSquare);
+    }
 }
 }
 
@@ -43,7 +45,7 @@ function clearSquares (){
 const resetButton = document.getElementById('reset-button')
 function resetGrid(){
         for (i = 0; i < allSquares.length; i++){
-            allSquares[i].style.backgroundColor = 'white'
+            allSquares[i].style.backgroundColor = '#757e8a'
         }
 }
 resetButton.addEventListener('click', resetGrid)
