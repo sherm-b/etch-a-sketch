@@ -1,19 +1,30 @@
 
-let gridBody = document.getElementById('grid')
+const gridBody = document.getElementById('grid')
+const resetButton = document.getElementById('reset-button')
+const sideInput = document.getElementById('side-length-input')
+const setButton = document.getElementById('side-length-set')
+let allSquares = document.getElementsByClassName('grid-square')
+setButton.addEventListener('click', makeGrid)
 
-function makeGrid(thisMany){
-    gridBody.style.gridTemplateColumns = `repeat(${thisMany}, 1fr)`;
-    for(let i = 0;i < thisMany*thisMany;i++){
+function makeGrid(){
+    clearSquares()
+    gridBody.style.gridTemplateColumns = `repeat(${sideInput.value}, 1fr)`;
+    for(let i = 0;i < sideInput.value*sideInput.value;i++){
         let gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
         gridBody.appendChild(gridSquare);
+        
     }
 }
 
-makeGrid(40)
+function clearSquares (){
+    while (allSquares.length > 0){
+        for (i = 0;i < allSquares.length; i++){
+            allSquares[i].parentNode.removeChild(allSquares[i])
+        }
 
-
-let allSquares = document.querySelectorAll('.grid-square')
+}
+}
 
 allSquares.forEach(square => {
     square.addEventListener('mouseover', (event) => {
@@ -21,7 +32,7 @@ allSquares.forEach(square => {
     })
 })
 
-const resetButton = document.getElementById('reset-button')
+
 
 resetButton.addEventListener('click', () => {
     allSquares.forEach(square => {
