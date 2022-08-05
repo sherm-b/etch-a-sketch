@@ -12,6 +12,9 @@ function makeGrid(){
     for(let i = 0;i < sideInput.value*sideInput.value;i++){
         let gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
+        gridSquare.addEventListener('mouseover', (e)  => {
+            e.target.style.backgroundColor = 'black';
+        })
         gridBody.appendChild(gridSquare);
         
     }
@@ -20,22 +23,19 @@ function makeGrid(){
 function clearSquares (){
     while (allSquares.length > 0){
         for (i = 0;i < allSquares.length; i++){
-            allSquares[i].parentNode.removeChild(allSquares[i])
+            allSquares[i].parentNode.removeChild(allSquares[i]);
         }
 
 }
 }
 
-allSquares.forEach(square => {
-    square.addEventListener('mouseover', (event) => {
-        event.target.style.backgroundColor = 'black';
-    })
-})
+
+function resetGrid(){
+        for (i = 0; i < allSquares.length; i++){
+            allSquares[i].style.backgroundColor = 'white'
+        }
+}
+resetButton.addEventListener('click', resetGrid)
 
 
 
-resetButton.addEventListener('click', () => {
-    allSquares.forEach(square => {
-        square.style.backgroundColor = 'white';
-    })
-})
