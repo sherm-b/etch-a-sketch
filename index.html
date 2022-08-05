@@ -9,10 +9,14 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <input type="number">Please enter your desired grid size (<em>input x input</em>)</input>
+    <input type="text" id="side-length-input">Please enter your desired side length</input>
+    <button id="side-length-set">Enter Side Length</button>
     <button id='reset-button'>Click me to reset the canvas!</button>
-    <div id="grid">
-        
+    <div id="pen-types">
+        <input type="radio" id="black" name="pen-type" checked>Black</input>
+        <input type="radio" id="rainbow" name="pen-type">Rainbow</input>
+    </div>
+    <div id="grid">  
     </div>
 </body>
 </html>
