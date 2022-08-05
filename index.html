@@ -6,17 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <link href="https://www.dafontfree.net/embed/cm9uZG8tcmVndWxhciZkYXRhLzM0L3IvMTQwOTc1L3JvbmRvLnR0Zg" rel="stylesheet" type="text/css"/>
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <input type="text" id="side-length-input">Please enter your desired side length</input>
-    <button id="side-length-set">Enter Side Length</button>
-    <button id='reset-button'>Click me to reset the canvas!</button>
-    <div id="pen-types">
-        <input type="radio" id="black" name="pen-type" checked>Black</input>
-        <input type="radio" id="rainbow" name="pen-type">Rainbow</input>
+    <div>
+        <h2>Sherm-A-Sketch</h2>
     </div>
-    <div id="grid">  
+    <div class="canvas">
+        <div id="grid-container">
+            <div id="grid">  
+            </div>
+        </div>
     </div>
+    <div class="inputs">
+        <div class="length-inputs">
+            <div>Enter your desired side length</div>
+            <input type="text" id="side-length-input" placeholder="Enter a number from 1-100"></input>
+            <button id="side-length-set">Set Side Length</button>
+        </div>
+        <div>
+            <button id='reset-button'>Click me to clear the canvas!</button>
+        </div>
+        <div>
+        <div id="pen-types">
+            <div>Pen type:</div>
+            <input type="radio" id="black" name="pen-type" checked>Black</input>
+            <input type="radio" id="rainbow" name="pen-type">Rainbow</input>
+        </div>
+    </div>
+
 </body>
 </html>
