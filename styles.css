@@ -19,7 +19,7 @@
     width: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .grid-square{
     border: 1px solid black;
@@ -38,11 +38,20 @@ body{
 .length-inputs{
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 
 h2{
     margin: 11px;
 }
 
+button{
+    background-color: #feda3e;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: rondo;
+    font-size: large;
+
+}
 
 
